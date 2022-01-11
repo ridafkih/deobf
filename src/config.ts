@@ -1,26 +1,26 @@
 export default interface Config {
-    arrays: ArraysConfig;
-    proxyFunctions: ProxyFunctionsConfig;
-    expressions: ExpressionsConfig;
-    miscellaneous: MiscellaneousConfig;
+  arrays: ArraysConfig;
+  proxyFunctions: ProxyFunctionsConfig;
+  expressions: ExpressionsConfig;
+  miscellaneous: MiscellaneousConfig;
 }
 
 interface ArraysConfig {
-    unpackArrays: boolean;
-    removeArrays: boolean;
+  unpackArrays: boolean;
+  removeArrays: boolean;
 }
 
 interface ProxyFunctionsConfig {
-    replaceProxyFunctions: boolean;
-    removeProxyFunctions: boolean;
+  replaceProxyFunctions: boolean;
+  removeProxyFunctions: boolean;
 }
 
 interface ExpressionsConfig {
-    simplifyExpressions: boolean;
+  simplifyExpressions: boolean;
 }
 
 interface MiscellaneousConfig {
-    beautify: boolean;
-    simplifyProperties: boolean;
-    renameHexIdentifiers: boolean;
+  beautify: boolean;
+  simplifyProperties: boolean;
+  renameHexIdentifiers: boolean;
 }
