@@ -9,6 +9,7 @@ import PropertySimplifier from "./modifications/properties/propertySimplifier";
 import CleanupHelper from "./helpers/cleanupHelper";
 import VariableRenamer from "./modifications/renaming/variableRenamer";
 import FunctionExecutor from "./modifications/execution/functionExecutor";
+import { Config } from "./config";
 
 export function deobfuscate(source: string, config: Config = {}): string {
   const ast = parseScript(source) as Shift.Script;

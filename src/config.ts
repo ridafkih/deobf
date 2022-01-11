@@ -1,4 +1,4 @@
-declare interface Config {
+export interface Config {
   unpackArrays?: boolean;
   removeArrays?: boolean;
   replaceProxyFunctions?: boolean;
