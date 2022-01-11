@@ -44,11 +44,6 @@ export function deobfuscate(source: string, config: Config): string {
   }
 
   for (const modification of modifications) {
-    console.log(
-      `[${new Date().toISOString()}]: Executing ${
-        modification.constructor.name
-      }`
-    );
     modification.execute();
   }
 
