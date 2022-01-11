@@ -18,30 +18,28 @@ export function deobfuscate(source: string, config: Config): string {
   // function execution should always be checked for
   modifications.push(new FunctionExecutor(ast));
 
-  if (config.proxyFunctions.replaceProxyFunctions) {
-    modifications.push(
-      new ProxyRemover(ast, config.proxyFunctions.removeProxyFunctions)
-    );
+  if (config.replaceProxyFunctions) {
+    modifications.push(new ProxyRemover(ast, config.removeProxyFunctions));
   }
 
-  if (config.expressions.simplifyExpressions) {
+  if (config.simplifyExpressions) {
     modifications.push(new ExpressionSimplifier(ast));
   }
 
-  if (config.arrays.unpackArrays) {
-    modifications.push(new ArrayUnpacker(ast, config.arrays.removeArrays));
+  if (config.unpackArrays) {
+    modifications.push(new ArrayUnpacker(ast, config.removeArrays));
   }
 
   // simplify any expressions that were revealed by the array unpacking
-  if (config.expressions.simplifyExpressions) {
+  if (config.simplifyExpressions) {
     modifications.push(new ExpressionSimplifier(ast));
   }
 
-  if (config.miscellaneous.simplifyProperties) {
+  if (config.simplifyProperties) {
     modifications.push(new PropertySimplifier(ast));
   }
 
-  if (config.miscellaneous.renameHexIdentifiers) {
+  if (config.renameHexIdentifiers) {
     modifications.push(new VariableRenamer(ast));
   }
 
@@ -55,7 +53,7 @@ export function deobfuscate(source: string, config: Config): string {
   }
 
   CleanupHelper.cleanup(ast);
-  const output = config.miscellaneous.beautify
+  const output = config.beautify
     ? codegen(ast, new FormattedCodeGen())
     : codegen(ast);
 
