@@ -1,4 +1,4 @@
-> This is a fork of the [deobfuscator developed by ben-sb](https://github.com/ben-sb/javascript-deobfuscator)
+\* *This is a fork of the [deobfuscator developed by ben-sb](https://github.com/ben-sb/javascript-deobfuscator)*
 
 # General purpose JavaScript deobfuscator
 
