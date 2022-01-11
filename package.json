@@ -1,34 +1,35 @@
 {
   "name": "deobf",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A JavaScript deobfuscator, originally based off the work of ben-sb",
   "main": "dist/index.js",
   "author": "",
   "license": "ISC",
-	"keywords": [
-		"deobfuscation"
-	],
-	"homepage": "https://github.com/ridafkih/jsdeobf",
-	"bugs": {
-		"url": "https://github.com/ridafkih/jsdeobf",
-		"email": "hello@rida.dev"
-	},
+  "keywords": [
+    "deobfuscation"
+  ],
+  "homepage": "https://github.com/ridafkih/jsdeobf",
+  "bugs": {
+    "url": "https://github.com/ridafkih/jsdeobf",
+    "email": "hello@rida.dev"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ridafkih/jsdeobf.git"
   },
-	"private": false,
-	"scripts": {
-		"build": "tsc",
-		"install": "npm run build"
-	},
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "install": "npm run build"
+  },
   "dependencies": {
     "estraverse": "^4.2.0",
     "shift-ast": "^6.1.0",
     "shift-codegen": "^7.0.3",
     "shift-parser": "^7.0.3",
     "shift-validator": "^5.0.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "vm2": "^3.9.5"
   },
   "devDependencies": {
     "@types/estraverse": "^5.1.1",

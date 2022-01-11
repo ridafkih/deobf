@@ -1,7 +1,14 @@
+import { VM } from "vm2";
+
 import Modification from "../../modification";
 import * as Shift from "shift-ast";
 import { traverse } from "../../helpers/traverse";
 import TraversalHelper from "../../helpers/traversalHelper";
+
+const vm = new VM({
+  timeout: 1000,
+  sandbox: {},
+});
 
 export default class ExpressionSimplifier extends Modification {
   private readonly types = new Set(["BinaryExpression", "UnaryExpression"]);
@@ -128,7 +135,7 @@ export default class ExpressionSimplifier extends Modification {
   private evalCodeToExpression(code: string): Shift.Expression | null {
     let value;
     try {
-      value = eval(code);
+      value = vm.run(code);
     } catch {
       return null;
     }
