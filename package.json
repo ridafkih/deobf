@@ -6,7 +6,8 @@
   "author": "",
   "license": "ISC",
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+		"install": "npm run build"
 	},
   "dependencies": {
     "estraverse": "^4.2.0",
