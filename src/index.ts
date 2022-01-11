@@ -7,11 +7,10 @@ import ExpressionSimplifier from "./modifications/expressions/expressionSimplifi
 import ArrayUnpacker from "./modifications/arrays/arrayUnpacker";
 import PropertySimplifier from "./modifications/properties/propertySimplifier";
 import CleanupHelper from "./helpers/cleanupHelper";
-import Config from "./config";
 import VariableRenamer from "./modifications/renaming/variableRenamer";
 import FunctionExecutor from "./modifications/execution/functionExecutor";
 
-export function deobfuscate(source: string, config: Config): string {
+export function deobfuscate(source: string, config: Config = {}): string {
   const ast = parseScript(source) as Shift.Script;
   const modifications: Modification[] = [];
 
@@ -19,7 +18,9 @@ export function deobfuscate(source: string, config: Config): string {
   modifications.push(new FunctionExecutor(ast));
 
   if (config.replaceProxyFunctions) {
-    modifications.push(new ProxyRemover(ast, config.removeProxyFunctions));
+    modifications.push(
+      new ProxyRemover(ast, config.removeProxyFunctions || false)
+    );
   }
 
   if (config.simplifyExpressions) {
@@ -27,7 +28,7 @@ export function deobfuscate(source: string, config: Config): string {
   }
 
   if (config.unpackArrays) {
-    modifications.push(new ArrayUnpacker(ast, config.removeArrays));
+    modifications.push(new ArrayUnpacker(ast, config.removeArrays || false));
   }
 
   // simplify any expressions that were revealed by the array unpacking
