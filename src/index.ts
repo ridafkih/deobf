@@ -14,7 +14,6 @@ export function deobfuscate(source: string, config: Config = {}): string {
   const ast = parseScript(source) as Shift.Script;
   const modifications: Modification[] = [];
 
-  // function execution should always be checked for
   modifications.push(new FunctionExecutor(ast));
 
   if (config.replaceProxyFunctions) {
@@ -31,7 +30,6 @@ export function deobfuscate(source: string, config: Config = {}): string {
     modifications.push(new ArrayUnpacker(ast, config.removeArrays || false));
   }
 
-  // simplify any expressions that were revealed by the array unpacking
   if (config.simplifyExpressions) {
     modifications.push(new ExpressionSimplifier(ast));
   }
