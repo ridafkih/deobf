@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "author": "",
   "license": "ISC",
+	"scripts": {
+		"build": "tsc"
+	},
   "dependencies": {
     "estraverse": "^4.2.0",
     "shift-ast": "^6.1.0",
