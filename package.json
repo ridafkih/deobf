@@ -5,6 +5,19 @@
   "main": "dist/index.js",
   "author": "",
   "license": "ISC",
+	"keywords": [
+		"deobfuscation"
+	],
+	"homepage": "https://github.com/ridafkih/jsdeobf",
+	"bugs": {
+		"url": "https://github.com/ridafkih/jsdeobf",
+		"email": "hello@rida.dev"
+	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ridafkih/jsdeobf.git"
+  },
+	"private": false,
 	"scripts": {
 		"build": "tsc",
 		"install": "npm run build"
