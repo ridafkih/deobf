@@ -1,3 +1,5 @@
+> This is a fork of the [deobfuscator developed by ben-sb](https://github.com/ben-sb/javascript-deobfuscator)
+
 # General purpose JavaScript deobfuscator
 
 A simple but powerful deobfuscator to remove common JavaScript obfuscation techniques.
