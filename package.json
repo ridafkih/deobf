@@ -1,5 +1,5 @@
 {
-  "name": "jsdeobf",
+  "name": "deobf",
   "version": "1.1.0",
   "description": "A JavaScript deobfuscator, originally based off the work of ben-sb",
   "main": "dist/index.js",
